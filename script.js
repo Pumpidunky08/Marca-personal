@@ -1,70 +1,38 @@
-// script.js – Scroll effects, section reveal, dynamic subtitle & header color, skill bar animation
+// script.js – Apple‑style scroll‑snap pages with animated skill bars
 
-// ---------- Config ----------
-const subtitles = [
-  "Estudiante de Ingeniería de Sistemas – Universidad Javeriana", // default / home
-  "Sobre mí",
-  "Habilidades",
-  "Contacto"
-];
-const headerColors = [
-  "var(--color-primary)", // home
-  "#006699",
-  "#0099CC",
-  "#004080"
-];
-
-// ---------- Helper Functions ----------
-function setHeader(subIdx) {
-  const header = document.getElementById('top-header');
-  const subtitleEl = document.getElementById('subtitle');
-  if (!header || !subtitleEl) return;
-  subtitleEl.textContent = subtitles[subIdx] || subtitles[0];
-  header.style.backgroundColor = headerColors[subIdx] || headerColors[0];
-}
-
-// ---------- Section Reveal & Scroll Detection ----------
-const sections = document.querySelectorAll('.section');
-const observerOptions = {
-  root: null,
-  threshold: 0.2
-};
-const sectionObserver = new IntersectionObserver((entries) => {
+// Helper: add "visible" class to pages when they enter the viewport
+const pages = document.querySelectorAll('.page');
+const pageObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Determine which section index for subtitle change
-      const id = entry.target.id;
-      let idx = 0; // default home
-      switch (id) {
-        case 'about': idx = 1; break;
-        case 'skills': idx = 2; break;
-        case 'contact': idx = 3; break;
-        default: idx = 0;
-      }
-      setHeader(idx);
     }
   });
-}, observerOptions);
-sections.forEach(sec => sectionObserver.observe(sec));
+}, { root: null, threshold: 0.5 });
+pages.forEach(p => pageObserver.observe(p));
 
-// ---------- Skill Bar Animation ----------
+// Skill bar animation – runs when the skills page becomes visible
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const skillEl = entry.target;
-      const level = skillEl.getAttribute('data-level') || "0";
-      skillEl.style.setProperty('--skill-level', level + "%");
+      const level = skillEl.getAttribute('data-level') || '0';
+      const color = skillEl.getAttribute('data-color') || '#3572A5';
+      const fill = skillEl.querySelector('.fill');
+      if (fill) {
+        fill.style.width = level + '%';
+        fill.style.backgroundColor = color;
+      }
+      // Keep the skill element visible so it doesn't animate again unnecessarily
       skillEl.classList.add('visible');
     }
   });
 }, { root: null, threshold: 0.3 });
 
-const skillElements = document.querySelectorAll('.skill');
-skillElements.forEach(el => skillObserver.observe(el));
+const skillElems = document.querySelectorAll('.skill');
+skillElems.forEach(s => skillObserver.observe(s));
 
-// ---------- Initial Call (in case page loads already scrolled) ----------
+// Ensure the first page is visible on load (in case the browser starts scrolled)
 window.addEventListener('load', () => {
-  // Trigger header for top of page
-  setHeader(0);
+  pages[0]?.classList.add('visible');
 });

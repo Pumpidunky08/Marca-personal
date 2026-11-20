@@ -4,71 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan David Duarte. – Marca Personal</title>
+    <title>Juan D. – Marca Personal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Encabezado con subtítulo cambiante -->
-    <header id="top-header">
-        <h1 id="main-name">Juan D.</h1>
-        <p id="subtitle">Estudiante de Ingeniería de Sistemas – Universidad Javeriana</p>
-    </header>
+    <!-- Scroll‑snap container -->
+    <div class="snap-container">
+        <!-- Page 1 – Intro (Header + foto) -->
+        <section class="page" id="page-intro">
+            <header class="intro-header">
+                <h1>Juan D.</h1>
+                <p>Estudiante de Ingeniería de Sistemas – Universidad Javeriana</p>
+            </header>
+            <div class="profile-wrapper">
+                <img src="profile.jpg" alt="Foto de Juan" class="profile-pic" />
+            </div>
+        </section>
 
-    <!-- Imagen de perfil -->
-    <section id="profile" class="section">
-        <img src="profile.jpg" alt="Foto de Juan" class="profile-pic" />
-    </section>
+        <!-- Page 2 – Sobre mí -->
+        <section class="page" id="page-about">
+            <div class="content">
+                <h2>Sobre mí</h2>
+                <p>Soy estudiante de quinto semestre, con experiencia en C++, C, Python, R y conocimientos básicos de
+                    Java. Trabajo con Linux y me apasiona la resolución de problemas y el desarrollo de software.</p>
+            </div>
+        </section>
 
-    <section id="about" class="section">
-        <h2>Sobre mí</h2>
-        <p>Soy estudiante de quinto semestre, con experiencia en C++, C, Python, R y conocimientos básicos de Java.
-            Trabajo con Linux y me apasiona la resolución de problemas y el desarrollo de software.</p>
-    </section>
+        <!-- Page 3 – Habilidades -->
+        <section class="page" id="page-skills">
+            <div class="content">
+                <h2>Habilidades</h2>
+                <div class="skill-chart">
+                    <div class="skill" data-skill="C / C++" data-level="90" data-color="#f34b7d">
+                        <span class="skill-name">C / C++</span>
+                        <div class="skill-bar">
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-skill="Python" data-level="85" data-color="#3572A5">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-bar">
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-skill="R" data-level="75" data-color="#75AADB">
+                        <span class="skill-name">R</span>
+                        <div class="skill-bar">
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-skill="Java (básico)" data-level="40" data-color="#b07219">
+                        <span class="skill-name">Java (básico)</span>
+                        <div class="skill-bar">
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill" data-skill="Linux" data-level="80" data-color="#0298c3">
+                        <span class="skill-name">Linux</span>
+                        <div class="skill-bar">
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills" class="section">
-        <h2>Habilidades</h2>
-        <div class="skill-chart">
-            <!-- Cada barra se animará al entrar en vista -->
-            <div class="skill" data-skill="C / C++" data-level="90">
-                <span class="skill-name">C / C++</span>
-                <div class="skill-bar">
-                    <div class="fill"></div>
-                </div>
+        <!-- Page 4 – Contacto -->
+        <section class="page" id="page-contact">
+            <div class="content">
+                <h2>Contacto</h2>
+                <p>Email: <a href="mailto:juandduartecortina@gmail.com">juandduartecortina@gmail.com</a></p>
+                <p>Email: <a href="mailto:jd_duarte@javeriana.edu.co">jd_duarte@javeriana.edu.co</a></p>
+                <p>GitHub: <a href="https://github.com/Pumpidunky08" target="_blank">https://github.com/Pumpidunky08</a>
+                </p>
             </div>
-            <div class="skill" data-skill="Python" data-level="85">
-                <span class="skill-name">Python</span>
-                <div class="skill-bar">
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="skill" data-skill="R" data-level="75">
-                <span class="skill-name">R</span>
-                <div class="skill-bar">
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="skill" data-skill="Java (básico)" data-level="40">
-                <span class="skill-name">Java (básico)</span>
-                <div class="skill-bar">
-                    <div class="fill"></div>
-                </div>
-            </div>
-            <div class="skill" data-skill="Linux" data-level="80">
-                <span class="skill-name">Linux</span>
-                <div class="skill-bar">
-                    <div class="fill"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contacto</h2>
-        <p>Email: <a href="mailito:jd_duarte@javeriana.edu.co / juandduartecortina@gmail.com">jd_duarte@javeriana.edu.co
-                / juandduartecortina@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/Pumpidunky08" target="_blank">github.com/Pumpidunky08</a></p>
-    </section>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2026 Juan D. Todos los derechos reservados.</p>
