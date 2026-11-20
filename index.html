@@ -1,92 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan D. – Marca Personal</title>
+    <meta name="description" content="Portafolio personal de Juan D., estudiante de Ingeniería de Sistemas.">
+    <meta name="theme-color" content="#101a2b">
+    <title>Juan D. | Marca personal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-    <!-- Scroll‑snap container -->
-    <div class="snap-container">
-        <!-- Page 1 – Intro (Header + foto) -->
-        <section class="page" id="page-intro">
-            <header class="intro-header">
-                <h1>Juan D.</h1>
-                <p>Estudiante de Ingeniería de Sistemas – Universidad Javeriana</p>
-            </header>
-            <div class="profile-wrapper">
-                <img src="profile.jpg" alt="Foto de Juan" class="profile-pic" />
+    <main class="snap-container">
+        <section class="page page-intro" id="page-intro" aria-labelledby="intro-title">
+            <div class="content intro-content">
+                <p class="eyebrow">PORTAFOLIO PERSONAL</p>
+                <h1 id="intro-title">Hola, soy <span>Juan D.</span></h1>
+                <p class="intro-description">Estudiante de Ingeniería de Sistemas en la Pontificia Universidad Javeriana.</p>
+                <div class="profile-wrapper">
+                    <img src="profile.jpg" alt="Fotografía de Juan D." class="profile-pic"
+                         onerror="this.hidden = true;">
+                </div>
+                <a class="scroll-hint" href="#page-about">Conoce más <span aria-hidden="true">↓</span></a>
             </div>
         </section>
 
-        <!-- Page 2 – Sobre mí -->
-        <section class="page" id="page-about">
+        <section class="page" id="page-about" aria-labelledby="about-title">
             <div class="content">
-                <h2>Sobre mí</h2>
-                <p>Soy estudiante de quinto semestre, con experiencia en C++, C, Python, R y conocimientos básicos de
-                    Java. Trabajo con Linux y me apasiona la resolución de problemas y el desarrollo de software.</p>
+                <p class="eyebrow">UN POCO SOBRE MÍ</p>
+                <h2 id="about-title">Sobre mí</h2>
+                <p>Soy estudiante de quinto semestre, con experiencia en C++, C, Python y R, además de conocimientos básicos de Java. Trabajo con Linux y me apasiona la resolución de problemas, el aprendizaje continuo y el desarrollo de software.</p>
             </div>
         </section>
 
-        <!-- Page 3 – Habilidades -->
-        <section class="page" id="page-skills">
+        <section class="page" id="page-skills" aria-labelledby="skills-title">
             <div class="content">
-                <h2>Habilidades</h2>
+                <p class="eyebrow">TECNOLOGÍAS Y CONOCIMIENTOS</p>
+                <h2 id="skills-title">Habilidades</h2>
+                <p class="section-description">Una representación orientativa de mi nivel de familiaridad con cada tecnología.</p>
                 <div class="skill-chart">
                     <div class="skill" data-skill="C / C++" data-level="90" data-color="#f34b7d">
-                        <span class="skill-name">C / C++</span>
-                        <div class="skill-bar">
-                            <div class="fill"></div>
-                        </div>
+                        <div class="skill-heading"><span class="skill-name">C / C++</span><span class="skill-value">90%</span></div>
+                        <div class="skill-bar" role="progressbar" aria-label="C / C++" aria-valuemin="0" aria-valuemax="100" aria-valuenow="90"><div class="fill"></div></div>
                     </div>
                     <div class="skill" data-skill="Python" data-level="85" data-color="#3572A5">
-                        <span class="skill-name">Python</span>
-                        <div class="skill-bar">
-                            <div class="fill"></div>
-                        </div>
+                        <div class="skill-heading"><span class="skill-name">Python</span><span class="skill-value">85%</span></div>
+                        <div class="skill-bar" role="progressbar" aria-label="Python" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><div class="fill"></div></div>
                     </div>
                     <div class="skill" data-skill="R" data-level="75" data-color="#75AADB">
-                        <span class="skill-name">R</span>
-                        <div class="skill-bar">
-                            <div class="fill"></div>
-                        </div>
+                        <div class="skill-heading"><span class="skill-name">R</span><span class="skill-value">75%</span></div>
+                        <div class="skill-bar" role="progressbar" aria-label="R" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75"><div class="fill"></div></div>
                     </div>
                     <div class="skill" data-skill="Java (básico)" data-level="40" data-color="#b07219">
-                        <span class="skill-name">Java (básico)</span>
-                        <div class="skill-bar">
-                            <div class="fill"></div>
-                        </div>
+                        <div class="skill-heading"><span class="skill-name">Java (básico)</span><span class="skill-value">40%</span></div>
+                        <div class="skill-bar" role="progressbar" aria-label="Java básico" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40"><div class="fill"></div></div>
                     </div>
                     <div class="skill" data-skill="Linux" data-level="80" data-color="#0298c3">
-                        <span class="skill-name">Linux</span>
-                        <div class="skill-bar">
-                            <div class="fill"></div>
-                        </div>
+                        <div class="skill-heading"><span class="skill-name">Linux</span><span class="skill-value">80%</span></div>
+                        <div class="skill-bar" role="progressbar" aria-label="Linux" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="fill"></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Page 4 – Contacto -->
-        <section class="page" id="page-contact">
+        <section class="page" id="page-contact" aria-labelledby="contact-title">
             <div class="content">
-                <h2>Contacto</h2>
-                <p>Email: <a href="mailto:juandduartecortina@gmail.com">juandduartecortina@gmail.com</a></p>
-                <p>Email: <a href="mailto:jd_duarte@javeriana.edu.co">jd_duarte@javeriana.edu.co</a></p>
-                <p>GitHub: <a href="https://github.com/Pumpidunky08" target="_blank">https://github.com/Pumpidunky08</a>
-                </p>
+                <p class="eyebrow">HABLEMOS</p>
+                <h2 id="contact-title">Contacto</h2>
+                <p>Si quieres ponerte en contacto conmigo, puedes escribirme o visitar mi perfil de GitHub.</p>
+                <div class="contact-links">
+                    <a href="mailto:juandduartecortina@gmail.com">juandduartecortina@gmail.com</a>
+                    <a href="mailto:jd_duarte@javeriana.edu.co">jd_duarte@javeriana.edu.co</a>
+                    <a href="https://github.com/Pumpidunky08" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2026 Juan D. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <footer><p>&copy; <span id="current-year">2026</span> Juan D. Todos los derechos reservados.</p></footer>
 </body>
-
 </html>
